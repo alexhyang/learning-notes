@@ -1,11 +1,11 @@
 # Exercise 2: Shell Tools and Scripting
 
-This document contains solutions to [Lecture 2](https://missing.csail.mit.edu/2020/shell-tools/) exercises and related research notes.
+This document contains solutions to [Lecture 2](https://missing.csail.mit.edu/2020/shell-tools/) exercises and topics for later research.
 
 Contents:
 
 * [Exercises](#exercises)
-* [More](#more)
+* [More to research](#more-to-research)
 * [References](#references)
 
 ## Exercises
@@ -24,6 +24,11 @@ Contents:
     drwx------+ 47 user group 1.5K Jan 12 18:08 ..
     ```
 
+    Solution:
+    ```bash
+    ls -ahclt
+    ```
+
 1.  Write bash functions `marco` and `polo` that do the following. 
     Whenever you execute `marco` the current working directory should be saved in some manner, 
     then when you execute `polo`, no matter what directory you are in, 
@@ -31,6 +36,18 @@ Contents:
     For ease of debugging you can write the code in a file `marco.sh` and 
     (re)load the definitions to your shell by executing `source marco.sh`.
 
+    Solution:
+    ```bash
+    #!/bin/bash
+
+    marco () {
+      pushd $(pwd)
+    }
+
+    polo () {
+      popd
+    }
+    ```
 
 1.  Say you have a command that fails rarely. In order to debug it 
     you need to capture its output but it can be time consuming to get a failure run. 
@@ -52,6 +69,9 @@ Contents:
     echo "Everything went according to plan"
     ```
 
+    Solution:
+    see [Q3-solution](./Q3-solution)
+
 1.  As we covered in the lecture `find’s -exec` can be very powerful for 
     performing operations over the files we are searching for. However, 
     what if we want to do something with all the files, like creating a zip file? 
@@ -65,10 +85,36 @@ Contents:
     the folder and makes a zip with them. Note that your command should work even 
     if the files have spaces (hint: check `-d` flag for `xargs`).
 
+    Solution:
+    ```bash
+    # current directory
+    find . -name "*.html" -type f | xargs -d "\n" tar -cvzf archive.tar.gz
+
+    # current directory and sub-directories
+    find . -path "*/*.html" -type f | xargs -d "\n" tar -cvzf archive.tar.gz
+    ```
+
 1.  (Advanced) Write a command or script to recursively find the most recently 
     modified file in a directory. More generally, can you list all files by recency?
 
-## More
+    Solution:
+    ```bash
+    # current directory
+    find . -type f | xargs ls -lht
+
+    # current directory and sub-directories
+    find . -path "*/*.*" -type f | xargs ls -lht
+    ```
+
+## More to research
+*   Q3:
+    *   standard stream redirection
+    *   `source` vs. `.`
+    *   `exit 1` will close shell
+
+*   Q4:
+    *   .tar.gz (a compressed archive file)
+    *   find -exec vs. xargs
 
 ## References
 *   [fff]()

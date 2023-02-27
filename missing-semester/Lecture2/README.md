@@ -70,7 +70,7 @@ Contents:
     ```
 
     Solution:
-    see [Q3-solution](./Q3-solution)
+    see [Q3-solution](./Q3-solution.sh)
 
 1.  As we covered in the lecture `find’s -exec` can be very powerful for 
     performing operations over the files we are searching for. However, 

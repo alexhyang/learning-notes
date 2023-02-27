@@ -9,7 +9,7 @@ count=0
 until [[ $? -ne 0 ]];
 do
   ((count++))
-  ./fail.sh &> fail-log
+  ./Q3.sh &> Q3-fail-log
 done
 echo "found error after $count runs"
-cat fail-log
+cat Q3-fail-log

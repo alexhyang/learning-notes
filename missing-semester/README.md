@@ -8,7 +8,7 @@
 1.  Lecture 3 - Editors (vim) (solutions skipped)
 1.  Lecture 4 - Data Wrangling
 1.  [Lecture 5 - Command-line Environment](./Lecture5/README.md)
-1.  [Lecture 6 - Version Control (Git)](./Lecture6/README.md)
+1.  Lecture 6 - Version Control (Git)
 
 ## See also
 *   [Hacker News](https://news.ycombinator.com/item?id=22226380)

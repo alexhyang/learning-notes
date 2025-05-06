@@ -1,6 +1,6 @@
 # The Missing Semester of Your CS Education
 
-[This courses](https://missing.csail.mit.edu/) explains how to master the command-line, use a powerful text editor, use fancy features of version control systems, etc.
+[These courses](https://missing.csail.mit.edu/) explains how to master the command-line, use a powerful text editor, use fancy features of version control systems, etc.
 
 ## Solutions to Exercises
 1.  Lecture 1 - Course overview + the shell (solutions skipped)
